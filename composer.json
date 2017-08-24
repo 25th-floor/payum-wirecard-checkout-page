@@ -1,0 +1,20 @@
+{
+    "name": "25th/payum-wirecard-checkout-page",
+    "description": "Payum extension for wirecard checkout page integration.",
+    "type": "library",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Johannes Lichtenwallner",
+            "email": "jl@25th-floor.com"
+        }
+    ],
+    "require": {
+        "php": "^7.1",
+        "payum/core": "^1.4"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "^6.3",
+        "php-http/guzzle6-adapter": "^1.1"
+    }
+}
