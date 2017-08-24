@@ -4,22 +4,14 @@
          bootstrap="vendor/autoload.php"
          colors="true">
     <testsuites>
-        <testsuite name="BMEcat\\Tests">
-            <directory>./module/BMEcat/test</directory>
-        </testsuite>
-        <testsuite name="Foerch\\Tests">
-            <directory>./module/Foerch/test</directory>
-        </testsuite>
-        <testsuite name="Import\\Tests">
-            <directory>./module/Import/test</directory>
+        <testsuite name="TwentyFifthTest\Payum\WirecardCheckoutPage\Tests">
+            <directory>./test</directory>
         </testsuite>
     </testsuites>
 
     <filter>
         <whitelist>
-            <directory suffix=".php">./module/BMEcat/src</directory>
-            <directory suffix=".php">./module/Foerch/src</directory>
-            <directory suffix=".php">./module/Import/src</directory>
+            <directory suffix=".php">./src</directory>
         </whitelist>
     </filter>
 </phpunit>
