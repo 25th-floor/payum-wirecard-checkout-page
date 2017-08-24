@@ -1,17 +1,17 @@
 <?php
-namespace Payum\Skeleton;
+namespace TwentyFifth\Payum\WirecardCheckoutPage;
 
 use TwentyFifth\Payum\WirecardCheckoutPage\Action\AuthorizeAction;
 use TwentyFifth\Payum\WirecardCheckoutPage\Action\CancelAction;
-use TwentyFifth\Payum\WirecardCheckoutPage\Action\ConvertPaymentAction;
 use TwentyFifth\Payum\WirecardCheckoutPage\Action\CaptureAction;
+use TwentyFifth\Payum\WirecardCheckoutPage\Action\ConvertPaymentAction;
 use TwentyFifth\Payum\WirecardCheckoutPage\Action\NotifyAction;
 use TwentyFifth\Payum\WirecardCheckoutPage\Action\RefundAction;
 use TwentyFifth\Payum\WirecardCheckoutPage\Action\StatusAction;
 use Payum\Core\Bridge\Spl\ArrayObject;
 use Payum\Core\GatewayFactory;
 
-class SkeletonGatewayFactory extends GatewayFactory
+class WirecardCheckoutPageGatewayFactory extends GatewayFactory
 {
     /**
      * {@inheritDoc}

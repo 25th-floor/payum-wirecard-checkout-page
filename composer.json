@@ -9,6 +9,16 @@
             "email": "jl@25th-floor.com"
         }
     ],
+    "autoload": {
+        "psr-4": {
+            "TwentyFifth\\Payum\\WirecardCheckoutPage\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "TwentyFifthTest\\Payum\\WirecardCheckoutPage\\": "test/"
+        }
+    },
     "require": {
         "php": "^7.1",
         "payum/core": "^1.4"

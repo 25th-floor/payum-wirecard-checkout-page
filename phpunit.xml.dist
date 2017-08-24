@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<phpunit xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:noNamespaceSchemaLocation="vendor/phpunit/phpunit/phpunit.xsd"
+         bootstrap="vendor/autoload.php"
+         colors="true">
+    <testsuites>
+        <testsuite name="BMEcat\\Tests">
+            <directory>./module/BMEcat/test</directory>
+        </testsuite>
+        <testsuite name="Foerch\\Tests">
+            <directory>./module/Foerch/test</directory>
+        </testsuite>
+        <testsuite name="Import\\Tests">
+            <directory>./module/Import/test</directory>
+        </testsuite>
+    </testsuites>
+
+    <filter>
+        <whitelist>
+            <directory suffix=".php">./module/BMEcat/src</directory>
+            <directory suffix=".php">./module/Foerch/src</directory>
+            <directory suffix=".php">./module/Import/src</directory>
+        </whitelist>
+    </filter>
+</phpunit>
