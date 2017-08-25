@@ -19,7 +19,7 @@ class WirecardCheckoutPageGatewayFactory extends GatewayFactory
     protected function populateConfig(ArrayObject $config)
     {
         $config->defaults([
-            'payum.factory_name' => 'wirecard-checkout-page',
+            'payum.factory_name' => 'wirecard_checkout_page',
             'payum.factory_title' => 'Wirecard Checkout Page',
             'payum.action.capture' => new CaptureAction(),
             'payum.action.authorize' => new AuthorizeAction(),
