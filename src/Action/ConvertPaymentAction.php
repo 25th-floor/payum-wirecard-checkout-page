@@ -18,6 +18,7 @@ class ConvertPaymentAction implements ActionInterface
      */
     public function execute($request)
     {
+        dolog(__METHOD__);
         RequestNotSupportedException::assertSupports($this, $request);
 
         /** @var PaymentInterface $payment */

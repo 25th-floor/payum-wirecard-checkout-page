@@ -15,11 +15,20 @@ class StatusAction implements ActionInterface
      */
     public function execute($request)
     {
+        dolog(__METHOD__);
         RequestNotSupportedException::assertSupports($this, $request);
 
         $model = ArrayObject::ensureArrayObject($request->getModel());
 
-        throw new \LogicException('Not implemented');
+        if (isset($model['CANCELLED'])) {
+            $request->markCanceled();
+            return;
+        }
+        if (isset($model['SUCCESS'])) {
+            $request->markCaptured();
+            return;
+        }
+
     }
 
     /**

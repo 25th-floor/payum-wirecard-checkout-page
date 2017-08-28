@@ -1,0 +1,15 @@
+{% extends layout ?: "@PayumCore/layout.html.twig" %}
+
+{% block payum_body %}
+    <h2>was hats da?</h2>
+
+    <form method="post" action="https://checkout.wirecard.com/page/init.php">
+        {% for key, value in paymentData %}
+            {{ key }}: <input type="text" size="100" name="{{ key }}" value="{{ value }}" /><br />
+
+        {% endfor %}
+
+        <input type="submit" value="Submit" />
+    </form>
+
+{% endblock %}

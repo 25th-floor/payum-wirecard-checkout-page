@@ -18,6 +18,7 @@ class NotifyAction implements ActionInterface
      */
     public function execute($request)
     {
+        dolog(__METHOD__);
         RequestNotSupportedException::assertSupports($this, $request);
 
         $model = ArrayObject::ensureArrayObject($request->getModel());
