@@ -2,6 +2,7 @@
 
 {% block payum_body %}
     <h2>was hats da?</h2>
+    <p>{{ url }}</p>
 
     <form method="post" action="https://checkout.wirecard.com/page/init.php">
         {% for key, value in paymentData %}

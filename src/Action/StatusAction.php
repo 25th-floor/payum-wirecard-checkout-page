@@ -15,7 +15,7 @@ class StatusAction implements ActionInterface
      */
     public function execute($request)
     {
-        dolog(__METHOD__);
+
         RequestNotSupportedException::assertSupports($this, $request);
 
         $model = ArrayObject::ensureArrayObject($request->getModel());
@@ -24,8 +24,8 @@ class StatusAction implements ActionInterface
             $request->markCanceled();
             return;
         }
-        if (isset($model['SUCCESS'])) {
-            $request->markCaptured();
+        if (isset($model['CAPTURED'])) {
+            $request->markPending();
             return;
         }
 

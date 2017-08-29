@@ -21,6 +21,8 @@ class WirecardCheckoutPageGatewayFactory extends GatewayFactory
      */
     protected function populateConfig(ArrayObject $config)
     {
+
+
         $config->defaults([
             'payum.template.authorize' => '@TwentyFifthPayumWirecardCheckoutPage/Action/capture.html.twig',
         ]);
@@ -28,7 +30,9 @@ class WirecardCheckoutPageGatewayFactory extends GatewayFactory
         $config->defaults([
             'payum.factory_name'           => 'wirecard_checkout_page',
             'payum.factory_title'          => 'Wirecard Checkout Page',
-            'payum.action.capture'         => new CaptureAction($config['payum.template.authorize']),
+            'payum.action.capture'         => new CaptureAction(
+                'nix', 'nix'
+            ),
             'payum.action.authorize'       => new AuthorizeAction(),
             'payum.action.refund'          => new RefundAction(),
             'payum.action.cancel'          => new CancelAction(),
@@ -37,20 +41,25 @@ class WirecardCheckoutPageGatewayFactory extends GatewayFactory
             'payum.action.convert_payment' => new ConvertPaymentAction(),
         ]);
 
-
-
         if (false == $config['payum.api']) {
             $config['payum.default_options'] = array(
                 'sandbox' => true,
             );
             $config->defaults($config['payum.default_options']);
-            $config['payum.required_options'] = [];
+            $config['payum.required_options'] = [
+//                'id',
+//                'secret',
+//                'sandbox'
+            ];
 
             $config['payum.api'] = function (ArrayObject $config) {
                 $config->validateNotEmpty($config['payum.required_options']);
-
+                /*print_r(array_keys($config->getArrayCopy()));
+                die();*/
                 return new Api((array)$config, $config['payum.http_client'], $config['httplug.message_factory']);
             };
+
+
         }
 
         $config['payum.paths'] = array_replace([
